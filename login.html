@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e8d5f2 0%, #d4e5f7 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    height: 550px;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+}
+
+/* Welcome Panel */
+.welcome-panel {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 50%, #ffa8c5 100%);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+    left: 0;
+}
+
+.welcome-panel.slide-right {
+    transform: translateX(100%);
+}
+
+.welcome-content {
+    text-align: center;
+    color: white;
+    padding: 40px;
+}
+
+.welcome-content h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.welcome-content p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    opacity: 0.95;
+}
+
+.toggle-btn {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 50px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background: white;
+    color: #ff6b9d;
+}
+
+/* Form Container */
+.form-container {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 40px;
+    transition: transform 0.6s ease-in-out;
+    opacity: 1;
+}
+
+#loginForm {
+    right: 0;
+}
+
+#registerForm {
+    left: 0;
+}
+
+.form-container.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.form-container h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Input Group */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 45px 15px 15px;
+    border: none;
+    background: #f0f0f0;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: #333;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+.input-group input:focus {
+    background: #e8e8e8;
+}
+
+.input-group input::placeholder {
+    color: #999;
+}
+
+.input-group i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 1rem;
+}
+
+/* Forgot Password */
+.forgot-password {
+    display: block;
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #ff6b9d;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+}
+
+/* Social Login */
+.social-text {
+    text-align: center;
+    color: #666;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-btn {
+    width: 45px;
+    height: 45px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.social-btn i {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.social-btn:hover {
+    background: #f8f8f8;
+    border-color: #ff6b9d;
+}
+
+.social-btn:hover i {
+    color: #ff6b9d;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .container {
+        max-width: 400px;
+        height: auto;
+        min-height: 1   00px;
+        flex-direction: column;
+    }
+
+    .welcome-panel {
+        position: relative;
+        width: 100%;
+        height: 100px;
+        border-radius: 30px 30px 0 0;
+        transform: none !important;
+    }
+
+    .welcome-panel.slide-right {
+        transform: none !important;
+    }
+
+    .welcome-content h1 {
+        font-size: 2rem;
+    }
+
+    .welcome-content p {
+        font-size: 0.9rem;
+    }
+
+    .form-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 40px 30px;
+        transform: none !important;
+    }
+
+    #loginForm,
+    #registerForm {
+        right: auto;
+        left: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        border-radius: 20px;
+    }
+
+    .welcome-panel {
+        height: 200px;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .welcome-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .welcome-content {
+        padding: 30px 20px;
+    }
+
+    .form-container {
+        padding: 30px 25px;
+    }
+
+    .form-container h2 {
+        font-size: 1.7rem;
+    }
+
+    .toggle-btn {
+        padding: 10px 40px;
+        font-size: 0.95rem;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+
+    .social-btn {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+
+      /*  navbar and hero section  */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 8%;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  background:rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+}
+
+.logo{
+  font-size:26px;
+  font-weight:800;
+  color:#ff2e63;
+}
+
+.navbar nav a{
+  margin:0 15px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.navbar nav a:hover{
+  color:#ff2e63;
+}
+
+.nav-btn{
+  padding:10px 20px;
+  background:#ff2e63;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+}
+
+
+
+
+.navbar nav a {
+  text-decoration: none;
+  color: #e5e7eb;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -6px;
+  background: #facc15;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover::after {
+  width: 100%;
+}
+
+.navbar nav a:hover {
+  color: #facc15;
+}
+
+
+.festify-logo {
+  display: flex;
+  gap: 2px;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.festify-logo span {
+  transition: 0.3s ease;
+}
+
+/* Individual Letter Colors */
+.festify-logo .f  { color: #facc15; }  
+.festify-logo .e  { color: #22c55e; }  
+.festify-logo .s  { color: #38bdf8; }  
+.festify-logo .t  { color: #a78bfa; } 
+.festify-logo .i  { color: #fb7185; }  
+.festify-logo .f2 { color: #f97316; }  
+.festify-logo .y  { color: #10b981; }  
+
+.festify-logo:hover span {
+  transform: translateY(-3px);
+  text-shadow: 0 0 15px currentColor;
+}
+
+
+</style>
+  </head>
+<body>
+      
+<!-- NAVBAR -->
+<header class="navbar">
+<!-- NAV LOGO -->
+    <!-- Logo -->
+<div class="nav-logo festify-logo">
+  <span class="f">F</span>
+  <span class="e">E</span>
+  <span class="s">S</span>
+  <span class="t">T</span>
+  <span class="i">I</span>
+  <span class="f2">F</span>
+  <span class="y">Y</span>
+</div>
+
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="index.html" class="active">About</a>
+    <a href="index.html" class="active">Events</a>
+    <a href="index.html" class="active">Contact</a>
+    <a href="index.html" class="active">Services</a>
+
+  </nav>
+  <a href="#" class="nav-btn" onclick="window.location.href='card12-details.html'">Buy Tickets</a>
+</header>
+   <!--  NAVBAR  -->
+
+    <div class="container">
+        <!-- Welcome Panel -->
+        <div class="welcome-panel" id="welcomePanel">
+            <div class="welcome-content">
+                <h1>Hello, Welcome!</h1>
+                <p id="welcomeText">Don't have an account?</p>
+                <button class="toggle-btn" id="toggleBtn" onclick="toggleForm()">Register</button>
+            </div>
+        </div>
+
+        <!-- Login Form -->
+        <div class="form-container" id="loginForm" >
+            <h2>Login</h2>
+            <form>
+                <div class="input-group">
+                    <input type="text" placeholder="Username" required>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <a href="#" class="forgot-password">Forgot password?</a>
+                <button type="submit" class="submit-btn">Login</button>
+                <p class="social-text">or login with social platforms</p>
+                <div class="social-icons">
+                    <button type="button" class="social-btn"><i class="fab fa-google"></i></button>
+                    <button type="button" class="social-btn"><i class="fab fa-facebook-f"></i></button>
+                    <button type="button" class="social-btn"><i class="fab fa-github"></i></button>
+                    <button type="button" class="social-btn"><i class="fab fa-linkedin-in"></i></button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="form-container hidden" id="registerForm">
+            <h2>Registration</h2>
+            <form>
+                <div class="input-group">
+                    <input type="text" placeholder="Username" required>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Email" required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <button type="submit" class="submit-btn">Register</button>
+                <p class="social-text">or register with social platforms</p>
+                <div class="social-icons">
+                    <button type="button" class="social-btn"><i class="fab fa-google"></i></button>
+                    <button type="button" class="social-btn"><i class="fab fa-facebook-f"></i></button>
+                    <button type="button" class="social-btn"><i class="fab fa-github"></i></button>
+                    <button type="button" class="social-btn"><i class="fab fa-linkedin-in"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+<script>
+// Toggle between Login and Register forms
+function toggleForm() {
+    const welcomePanel = document.getElementById('welcomePanel');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const welcomeText = document.getElementById('welcomeText');
+    const toggleBtn = document.getElementById('toggleBtn');
+
+    // Check current state
+    const isLoginActive = !loginForm.classList.contains('hidden');
+
+    if (isLoginActive) {
+        // Switch to Register
+        welcomePanel.classList.add('slide-right');
+        loginForm.classList.add('hidden');
+        registerForm.classList.remove('hidden');
+        welcomeText.textContent = 'Already have an account?';
+        toggleBtn.textContent = 'Login';
+    } else {
+        // Switch to Login
+        welcomePanel.classList.remove('slide-right');
+        registerForm.classList.add('hidden');
+        loginForm.classList.remove('hidden');
+        welcomeText.textContent = "Don't have an account?";
+        toggleBtn.textContent = 'Register';
+    }
+}
+
+
+
+</script>
+</body>
+</html>

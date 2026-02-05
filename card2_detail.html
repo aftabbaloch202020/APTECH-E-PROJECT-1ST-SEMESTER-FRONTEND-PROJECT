@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Festify</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f7f7f7;
+  color:#111;
+}
+
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 8%;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  background:#504f4f;
+  backdrop-filter: blur(10px);
+}
+
+.logo{
+  font-size:26px;
+  font-weight:800;
+  color:#ff2e63;
+}
+
+.navbar nav a{
+  margin:0 15px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.navbar nav a:hover{
+  color:#ff2e63;
+}
+
+.nav-btn{
+  padding:10px 20px;
+  background:#ff2e63;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+}
+
+
+
+
+.navbar nav a {
+  text-decoration: none;
+  color: #e5e7eb;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -6px;
+  background: #facc15;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover::after {
+  width: 100%;
+}
+
+.navbar nav a:hover {
+  color: #facc15;
+}
+
+
+.festify-logo {
+  display: flex;
+  gap: 2px;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.festify-logo span {
+  transition: 0.3s ease;
+}
+
+.festify-logo .f  { color: #facc15; }  
+.festify-logo .e  { color: #22c55e; }  
+.festify-logo .s  { color: #38bdf8; }  
+.festify-logo .t  { color: #a78bfa; } 
+.festify-logo .i  { color: #fb7185; }  
+.festify-logo .f2 { color: #f97316; }  
+.festify-logo .y  { color: #10b981; }  
+
+.festify-logo:hover span {
+  transform: translateY(-3px);
+  text-shadow: 0 0 15px currentColor;
+}
+
+
+.container{
+  max-width:1200px;
+  margin:40px auto;
+  padding:0 20px;
+}
+
+.event-title{
+  font-size:42px;
+  font-weight:700;
+}
+
+.event-meta{
+  margin-top:8px;
+  color:#555;
+  font-size:15px;
+}
+
+.event-meta span{
+  font-weight:600;
+  color:#000;
+  margin-left:10px;
+}
+
+.event-grid{
+  margin-top:30px;
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:30px;
+}
+
+/* LEFT IMAGE */
+.event-image img{
+  width:100%;
+  border-radius:14px;
+  display:block;
+}
+
+/* RIGHT DETAILS BOX */
+.details-box{
+  background:#fff;
+  border-radius:14px;
+  padding:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.details-box h3{
+  font-size:22px;
+  margin-bottom:20px;
+}
+
+.detail-row{
+  display:flex;
+  gap:15px;
+  margin-bottom:18px;
+  align-items:flex-start;
+}
+
+.detail-row i{
+  font-size:18px;
+  color:#111;
+  margin-top:4px;
+}
+
+.detail-row p{
+  font-size:15px;
+  line-height:1.6;
+}
+
+.detail-row p strong{
+  display:block;
+  font-weight:600;
+  color:#000;
+}
+
+.detail-row a{
+  color:#0066cc;
+  text-decoration:none;
+}
+
+.detail-row a:hover{
+  text-decoration:underline;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .event-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+
+
+
+
+
+
+.container{
+  max-width:1200px;
+  margin:40px auto;
+  padding:0 20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:30px;
+}
+
+/* LEFT CONTENT */
+.section{
+  margin-bottom:35px;
+}
+
+.section h2{
+  font-size:20px;
+  margin-bottom:6px;
+}
+
+.time{
+  font-size:14px;
+  color:#555;
+  margin-bottom:10px;
+}
+
+.section p{
+  font-size:15px;
+  line-height:1.7;
+  color:#333;
+}
+
+/* RIGHT CARDS */
+.card{
+  background:#fff;
+  padding:20px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  margin-bottom:25px;
+}
+
+.card h3{
+  font-size:18px;
+  margin-bottom:15px;
+}
+
+.card p{
+  font-size:14px;
+  line-height:1.6;
+  margin-bottom:8px;
+}
+
+.card a{
+  color:#0066cc;
+  font-size:14px;
+  text-decoration:none;
+}
+
+.card a:hover{
+  text-decoration:underline;
+}
+
+/* MAP */
+.map iframe{
+  width:100%;
+  height:260px;
+  border:none;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* FAQ TITLE */
+.faq{
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:-40px;
+}
+
+.faq-section {
+  max-width: 900px;
+  margin: 50px auto;
+}
+
+.accordion-button {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 18px 20px;
+  background: #fff;
+}
+
+.accordion-button:not(.collapsed) {
+  background: #fff;
+  color: #000;
+  box-shadow: none;
+}
+
+.accordion-item {
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
+}
+
+.accordion-item + .accordion-item {
+  border-top: none;
+}
+
+.accordion-body {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.7;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+/*  FAQ  */
+
+
+
+
+
+.festify-footer {
+  background: linear-gradient(135deg, #0b0f1a, #111827);
+  color: #d1d5db;
+  padding: 70px 20px 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.footer-logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  color: #fff;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  transform: translateY(-3px);
+}
+
+.footer-box h3 {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
+
+.footer-box ul {
+  list-style: none;
+}
+
+.footer-box ul li {
+  margin-bottom: 12px;
+}
+
+.footer-box ul li a {
+  text-decoration: none;
+  color: #d1d5db;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.footer-box ul li a:hover {
+  color: #ec4899;
+  padding-left: 5px;
+}
+
+.footer-form {
+  display: flex;
+  margin-top: 15px;
+}
+
+.footer-form input {
+  flex: 1;
+  padding: 12px 14px;
+  border: none;
+  outline: none;
+  border-radius: 6px 0 0 6px;
+}
+
+.footer-form button {
+  padding: 12px 20px;
+  border: none;
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 0 6px 6px 0;
+  transition: 0.3s;
+}
+
+.footer-form button:hover {
+  opacity: 0.9;
+}
+
+.footer-bottom {
+  margin-top: 60px;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-bottom span {
+  color: #ec4899;
+  font-weight: 600;
+}
+
+
+</style>
+</head>
+
+<body>
+
+
+
+<!-- NAVBAR -->
+<header class="navbar">
+<!-- NAV LOGO -->
+    <!-- Logo -->
+<div class="nav-logo festify-logo">
+  <span class="f">F</span>
+  <span class="e">E</span>
+  <span class="s">S</span>
+  <span class="t">T</span>
+  <span class="i">I</span>
+  <span class="f2">F</span>
+  <span class="y">Y</span>
+</div>
+
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="index.html" class="active">About</a>
+    <a href="index.html" class="active">Events</a>
+    <a href="index.html" class="active">Contact</a>
+  </nav>
+
+  <a href="#" class="nav-btn" onclick="window.location.href='card12-details.html'">Buy Tickets</a>
+</header>
+
+
+
+
+
+
+<div class="container">
+
+  <h1 class="event-title">Plaza Navidena</h1>
+
+  <p class="event-meta">
+    January 13 @ 8:00 am – January 14 @ 5:00 pm
+    <span>$9.00</span>
+  </p>
+
+  <div class="event-grid">
+
+    <!-- LEFT IMAGE -->
+    <div class="event-image">
+      <img src="image9.jpg" alt="Plaza Navidena">
+    </div>
+
+    <!-- RIGHT DETAILS -->
+    <div class="details-box">
+      <h3>Details</h3>
+
+      <div class="detail-row">
+        <i class="fa-regular fa-calendar"></i>
+        <p>
+          <strong>Start:</strong>
+          January 21 @ 8:00 am
+        </p>
+      </div>
+
+      <div class="detail-row">
+        <i class="fa-regular fa-calendar"></i>
+        <p>
+          <strong>End:</strong>
+          January 22 @ 5:00 pm
+        </p>
+      </div>
+
+      <div class="detail-row">
+        <i class="fa-solid fa-money-bill-1"></i>
+        <p>
+          <strong>Cost:</strong>
+          $15.00
+        </p>
+      </div>
+
+      <div class="detail-row">
+        <i class="fa-regular fa-folder"></i>
+        <p>
+          <strong>Event Category:</strong>
+          Festival
+        </p>
+      </div>
+
+      <div class="detail-row">
+        <i class="fa-solid fa-globe"></i>
+        <p>
+          <strong>Website:</strong>
+          <a href="file:///C:/Users/dell/Desktop/Alpa/alpa-35/detail.html">
+            file:///C:/Users/dell/Desktop/Alpa/alpa-35/detail.html
+          </a>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<div class="container">
+
+  <div class="grid">
+
+    <!-- LEFT SIDE -->
+    <div>
+
+      <div class="section">
+        <h2>Tree lighting ceremony</h2>
+        <div class="time">8:00am - 10:00am</div>
+        <p>
+          Tree lighting ceremonyJoin us for an enchanting evening dedicated to making a difference!
+          Our Annual Charity Gala, “A Night of Giving,” is an elegant affair aimed at supporting
+          local community initiatives.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Anaheim Ducks Day</h2>
+        <div class="time">10:00am - 12:00am</div>
+        <p>
+          Indulge in a night of glamour and purpose as we gather for a noble cause. The evening
+          will be filled with live music, delightful cuisine, captivating performances, and an
+          exciting silent auction featuring unique items generously donated by local businesses
+          and sponsors.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Winter Wonderland toy</h2>
+        <div class="time">01:00pm - 05:00pm</div>
+        <p>
+          Indulge in a night of glamour and purpose as we gather for a noble cause. The evening
+          will be filled with live music, delightful cuisine, captivating performances, and an
+          exciting silent auction featuring unique items generously donated by local businesses
+          and sponsors.
+        </p>
+      </div>
+
+
+
+      <!--  FAQ  -->
+      <div class="faq">FAQ</div>
+      <div class="faq-section">
+  <div class="accordion" id="faqAccordion">
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq1">
+          Are tickets refundable or transferable?
+        </button>
+      </h2>
+      <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Tickets are non-refundable but may be transferable depending on the event policy.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
+          Is there parking available at the venue?
+        </button>
+      </h2>
+      <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Yes, limited parking is available near the venue. We recommend arriving early.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">
+          Can dietary restrictions or allergies be accommodated?
+        </button>
+      </h2>
+      <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Yes, please inform us in advance so we can make necessary arrangements.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">
+          How can I become a sponsor or volunteer for the event?
+        </button>
+      </h2>
+      <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          You can contact our organizing team through the official website to apply.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq5">
+          Are there nearby accommodations for out-of-town guests?
+        </button>
+      </h2>
+      <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Several hotels and guest houses are available within walking distance.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+    </div>
+      <!--  FAQ  -->
+
+    <!-- RIGHT SIDE -->
+    <div>
+
+      <div class="card">
+        <h3>Organizer</h3>
+        <p><strong>APTECH</strong></p>
+        <p><strong>Phone</strong><br>+92 3219009251</p>
+        <a href="#">https://festify.com</a>
+      </div>
+
+      <div class="card">
+        <h3>Venue</h3>
+         <p>Berlin<br>
+          Alexanderplatz 1<br>
+          10178 Berlin<br>
+          Germany
+        </p>
+        <a href="#">+ Google Map</a>
+      </div>
+
+      <div class="map">
+        <iframe
+    src="https://www.google.com/maps?q=Aptech%20Computer%20Education%20Gulshan-e-Iqbal%20Karachi&output=embed">
+        </iframe>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<footer class="festify-footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-box">
+      <h2 class="footer-logo">FESTIFY</h2>
+      <p class="footer-desc">
+        Festify is your ultimate destination for music festivals, live concerts,
+        cultural events, and unforgettable experiences around the world.
+      </p>
+
+      <div class="footer-social">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Festify</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- EVENTS -->
+    <div class="footer-box">
+      <h3>Top Events</h3>
+      <ul>
+        <li><a href="#">Music Festivals</a></li>
+        <li><a href="#">Live Concerts</a></li>
+        <li><a href="#">Cultural Shows</a></li>
+        <li><a href="#">DJ Nights</a></li>
+        <li><a href="#">Street Festivals</a></li>
+      </ul>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div class="footer-box">
+      <h3>Newsletter</h3>
+      <p>Subscribe for festival updates & exclusive offers.</p>
+
+      <form class="footer-form">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    <p>© 2026 <span>Festify</span>. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buy Ticket | Festify</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0b0f1a, #111827);
+  color: #fff;
+}
+
+
+
+
+
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(2,6,23,0.9);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* FESTIFY COLORFUL LOGO */
+.festify-logo {
+  display: flex;
+  gap: 2px;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.festify-logo span {
+  transition: 0.3s ease;
+}
+
+/* Individual Letter Colors */
+.festify-logo .f  { color: #facc15; }  
+.festify-logo .e  { color: #22c55e; }  
+.festify-logo .s  { color: #38bdf8; }  
+.festify-logo .t  { color: #a78bfa; } 
+.festify-logo .i  { color: #fb7185; }  
+.festify-logo .f2 { color: #f97316; }  
+.festify-logo .y  { color: #10b981; }  
+
+/* Hover Animation */
+.festify-logo:hover span {
+  transform: translateY(-3px);
+  text-shadow: 0 0 15px currentColor;
+}
+
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.nav-logo span {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #facc15;
+}
+
+/* Menu */
+.nav-menu {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: #e5e7eb;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-menu li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -6px;
+  background: #facc15;
+  transition: 0.3s;
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+.nav-menu li a:hover {
+  color: #facc15;
+}
+
+/* Mobile */
+.menu-toggle {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #020617;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 0;
+    display: none;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: #fff;
+  }
+}
+
+
+
+
+
+
+
+/* Container */
+.ticket-page {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* Ticket Info */
+.ticket-info {
+  background: #111827;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.ticket-info h1 {
+  font-size: 34px;
+  margin-bottom: 15px;
+  color: #facc15;
+}
+
+.ticket-info p {
+  line-height: 1.7;
+  color: #d1d5db;
+  margin-bottom: 25px;
+}
+
+.ticket-details div {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.ticket-details i {
+  color: #22c55e;
+  margin-right: 10px;
+}
+
+/* Form */
+.ticket-form {
+  background: #0f172a;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.ticket-form h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #cbd5f5;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #1e293b;
+  color: #fff;
+}
+
+.form-group input::placeholder {
+  color: #94a3b8;
+}
+
+/* Price Box */
+.price-box {
+  background: #020617;
+  padding: 15px;
+  border-radius: 12px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.price-box span {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+/* Button */
+.btn-buy {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #facc15, #eab308);
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-buy:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(250,204,21,0.4);
+}
+
+/* Success Message */
+.success-msg {
+  display: none;
+  margin-top: 20px;
+  padding: 15px;
+  background: #022c22;
+  border-left: 5px solid #22c55e;
+  border-radius: 10px;
+  color: #bbf7d0;
+  font-size: 15px;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+  .ticket-page {
+    grid-template-columns: 1fr;
+  }
+}
+.ticket-image {
+  margin-top: 25px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+.ticket-image img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.ticket-image img:hover {
+  transform: scale(1.05);
+}
+
+
+
+
+
+.festify-footer {
+  background: linear-gradient(135deg, #0b0f1a, #111827);
+  color: #d1d5db;
+  padding: 70px 20px 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.footer-logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  color: #fff;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  transform: translateY(-3px);
+}
+
+.footer-box h3 {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
+
+.footer-box ul {
+  list-style: none;
+}
+
+.footer-box ul li {
+  margin-bottom: 12px;
+}
+
+.footer-box ul li a {
+  text-decoration: none;
+  color: #d1d5db;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.footer-box ul li a:hover {
+  color: #ec4899;
+  padding-left: 5px;
+}
+
+.footer-form {
+  display: flex;
+  margin-top: 15px;
+}
+
+.footer-form input {
+  flex: 1;
+  padding: 12px 14px;
+  border: none;
+  outline: none;
+  border-radius: 6px 0 0 6px;
+}
+
+.footer-form button {
+  padding: 12px 20px;
+  border: none;
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 0 6px 6px 0;
+  transition: 0.3s;
+}
+
+.footer-form button:hover {
+  opacity: 0.9;
+}
+
+.footer-bottom {
+  margin-top: 60px;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-bottom span {
+  color: #ec4899;
+  font-weight: 600;
+}
+
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    
+    <!-- Logo -->
+<div class="nav-logo festify-logo">
+  <span class="f">F</span>
+  <span class="e">E</span>
+  <span class="s">S</span>
+  <span class="t">T</span>
+  <span class="i">I</span>
+  <span class="f2">F</span>
+  <span class="y">Y</span>
+</div>
+
+    <!-- Menu -->
+    <ul class="nav-menu" id="navMenu">
+      <li><a class="nav-link" href="index.html">Home</a></li>
+      <li><a class="nav-link" href="index.html">About Us</a></li>
+      <li><a class="nav-link" href="index.html">Events</a></li>
+      <li><a class="nav-link" href="login.html">Login</a></li>
+    </ul>
+
+    <!-- Mobile Icon -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+
+
+<section class="ticket-page">
+
+  <!-- LEFT INFO -->
+  <div class="ticket-info">
+    <h1>🎶 Sunset Street Festival</h1>
+    <p>
+      Experience three unforgettable days of live music, street food,
+      art installations, and world-class performances. Book your seat
+      now and be part of the celebration!
+    </p>
+
+    <div class="ticket-details">
+      <div><i class="fa-regular fa-calendar"></i> Date: 17–19 January 2026</div>
+      <div><i class="fa-solid fa-location-dot"></i> Location: City Center Arena</div>
+      <div><i class="fa-solid fa-music"></i> Live Bands & DJs</div>
+      <div><i class="fa-solid fa-users"></i> Limited Seats Available</div>
+    </div>
+    <!-- Festival Image -->
+<div class="ticket-image">
+  <img src="image21.avif" alt="Festival Event">
+</div>
+
+  </div>
+
+  <!-- RIGHT FORM -->
+  <div class="ticket-form">
+    <h2>Buy Your Ticket</h2>
+
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name">
+    </div>
+
+    <div class="form-group">
+      <label>Email Address</label>
+      <input type="email" id="email" placeholder="Enter your email">
+    </div>
+
+    <div class="form-group">
+      <label>Ticket Type</label>
+      <select id="ticketType" onchange="updatePrice()">
+        <option value="50">General – $50</option>
+        <option value="99">VIP – $99</option>
+        <option value="149">VVIP – $149</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Quantity</label>
+      <input type="number" id="quantity" value="1" min="1" onchange="updatePrice()">
+    </div>
+
+    <div class="price-box">
+      <div>Total Price:</div>
+      <span>$<span id="totalPrice">50</span></span>
+    </div>
+
+    <button class="btn-buy">GET TICKET</button>
+
+  </div>
+
+</section>
+
+
+
+
+<footer class="festify-footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-box">
+      <h2 class="footer-logo">FESTIFY</h2>
+      <p class="footer-desc">
+        Festify is your ultimate destination for music festivals, live concerts,
+        cultural events, and unforgettable experiences around the world.
+      </p>
+
+      <div class="footer-social">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Festify</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- EVENTS -->
+    <div class="footer-box">
+      <h3>Top Events</h3>
+      <ul>
+        <li><a href="#">Music Festivals</a></li>
+        <li><a href="#">Live Concerts</a></li>
+        <li><a href="#">Cultural Shows</a></li>
+        <li><a href="#">DJ Nights</a></li>
+        <li><a href="#">Street Festivals</a></li>
+      </ul>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div class="footer-box">
+      <h3>Newsletter</h3>
+      <p>Subscribe for festival updates & exclusive offers.</p>
+
+      <form class="footer-form">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    <p>© 2026 <span>Festify</span>. All Rights Reserved.</p>
+  </div>
+</footer>
+<script>
+  const ticketType = document.getElementById('ticketType');
+  const quantity = document.getElementById('quantity');
+  const totalPrice = document.getElementById('totalPrice');
+  const successMsg = document.getElementById('successMsg');
+
+  function updatePrice() {
+    let pricePerTicket = parseFloat(ticketType.value);
+    let qty = parseInt(quantity.value);
+
+    // Special handling for 4, 6, 7 or more tickets
+    if (qty >= 4) {
+      totalPrice.textContent = (pricePerTicket * qty).toFixed(2);
+    } else {
+      totalPrice.textContent = (pricePerTicket * qty).toFixed(2);
+    }
+  }
+
+  function buyTicket() {
+    let qty = parseInt(quantity.value);
+    if (qty >= 1) {
+      updatePrice();
+      successMsg.style.display = 'block';
+      setTimeout(() => {
+        successMsg.style.display = 'none';
+      }, 5000); // hides message after 5 seconds
+    }
+  }
+
+  // Initial calculation
+  updatePrice();
+</script>
+
+</body>
+</html>
