@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Festify</title>
+  <link rel="icon" type="image/png" href="logo.png">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+     
+<!-- CSS LINK -->
+<link rel="stylesheet" href="style.css">
+</head>
+
+  <!-- Loader -->
+  <div id="loader">
+    <h1 id="typing" class="festify-logo"></h1>
+  </div>
+
+  <div id="main-content" style="display: none;">
+    <h1>Welcome to FESTIFY!</h1>
+    <p>Your main website content goes here.</p>
+  </div>
+ <!-- Loader -->
+
+<body>
+    
+      <!-- NAVBAR -->
+<header class="navbar">
+<!-- NAV LOGO -->
+    <!-- Logo -->
+<div class="nav-logo festify-logo">
+  <span class="f">F</span>
+  <span class="e">E</span>
+  <span class="s">S</span>
+  <span class="t">T</span>
+  <span class="i">I</span>
+  <span class="f2">F</span>
+  <span class="y">Y</span>
+</div>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Contact</a>
+    <div class="dropdown">
+      <a href="#" class="drop-btn">More ▾</a>
+      <div class="dropdown-menu">
+        <a href="login.html">Login</a>
+        <a href="#Services">Services</a>
+        <a href="#Reviews">Reviews</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#FAQ">FAQ</a>        
+
+      </div>
+    </div>
+
+  </nav>
+  <a href="#" class="nav-btn" onclick="window.location.href='card12-details.html'">Buy Tickets</a>
+</header>
+         <!--  NAVBAR  -->
+
+            <!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Feel The Music<br>Live The Festival</h1>
+    <p>
+      Experience electrifying performances, vibrant crowds,
+      and unforgettable festival nights.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#events" class="primary">Explore Events</a>
+      <a href="#" class="secondary" onclick="window.location.href='card12-details.html'">Get Tickets</a>
+    </div>
+  </div>
+
+  <!-- CIRCLE VIDEO -->
+  <div class="hero-video">
+<video
+  src="mp-video.mp4"
+  muted
+  loop
+  playsinline
+  onmouseenter="this.play()"
+  onmouseleave="this.pause()">
+</video>
+
+  </div>
+</section>
+         <!-- HERO SECTION -->
+
+  
+      <!-- ABOUT SECTION-->
+<section class="about-area" id="about">
+<div class="container">
+<div class="row align-items-center g-5">
+
+<!-- LEFT -->
+<div class="col-lg-6">
+  <div class="about-left-img">
+    <img src="https://i.pinimg.com/736x/5b/ad/c6/5badc6c907de85dce9f5f91c4ccc30d8.jpg">
+  </div>
+
+  <div class="about-counters">
+    <div class="counter-item">
+      <h2>32<span>+</span></h2>
+      <p>Sessions</p>
+    </div>
+    <div class="counter-item">
+      <h2>99<span>%</span></h2>
+      <p>Event Success</p>
+    </div>
+    <div class="counter-item">
+      <h2>6K<span>+</span></h2>
+      <p>Attendar</p>
+    </div>
+  </div>
+</div>
+
+<!-- RIGHT -->
+ 
+<div class="col-lg-6">
+  <span class="about-tag">[ ABOUT US ]</span>
+
+  <h1 class="about-title">
+    WELCOME TO <span>FESTIFY</span>
+  </h1>
+
+  <p class="about-desc">
+    Sunset Street Fest is a vibrant celebration of culture, creativity,
+    and community. For three unforgettable days, our city streets come alive
+    with music, food, art, and unforgettable experiences.
+  </p>
+
+<button class="btn" onclick="openAbout()">More About</button>
+
+  <div class="about-right-img">
+    <img src="image2.webp">
+  </div>
+</div>
+
+</div>
+</div>
+</section>
+
+     <!-- ABOUT SECTION-->
+
+
+
+      <!-- ABOUT SECTION ABOUT US -->
+<div id="aboutModal" class="about-modal">
+  <div class="about-content">
+    <span class="close-btn" onclick="closeAbout()">✖</span>
+
+    <div class="about-flex">
+      <div class="about-text">
+        <h2>About Festify</h2>
+        <p>
+          Festify is a celebration of music, culture, and community that has been bringing people together since 1990. What started as a small local gathering has grown into a vibrant festival platform loved by thousands of attendees each year. Our journey began with a simple dream — to create a space where creativity, rhythm, and joy could unite people from all walks of life.
+        </p>
+        <p>
+          Over the years, Festify has evolved into a dynamic festival experience featuring live music performances, cultural showcases, food festivals, and artistic expressions. From emerging local talent to internationally recognized performers, Festify has always been committed to showcasing diversity and originality on one energetic stage.
+        </p>
+        <p>
+            Today, Festify stands as a symbol of celebration, connection, and innovation. With each passing year, we continue to grow while staying true to our roots, inspiring people through music, culture, and shared experiences that last a lifetime.
+        </p>
+      </div>
+
+      <div class="about-image">
+        <img src="image1.webp" alt="Festival Image">
+      </div>
+    </div>
+  </div>
+</div>
+      <!-- ABOUT SECTION ABOUT US -->
+
+
+
+
+      <!-- CARD SECTION -->
+   <div class="container py-5">
+    <!-- Top Right Arrows -->
+    <div class="slider-arrows">
+        <div class="swiper-button-prev custom-arrow"></div>
+        <div class="swiper-button-next custom-arrow ms-3"></div>
+    </div>
+
+    <!-- Slider -->
+    <div class="swiper myEventSlider">
+        <div class="swiper-wrapper">
+
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+                <div class="card event-card">
+                    <img src="image19.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5>ENJOY EVENT FESTIVAL</h5>
+                        <p class="event-meta">
+                            <i class="bi bi-geo-alt-fill"></i> karachi
+                            &nbsp;
+                            <i class="bi bi-calendar-event-fill"></i> January 17, 2026
+                        </p>
+                        <p>Karachi Festival is a vibrant celebration of music, culture, food, and community spirit.</p>
+                        <button class="btn" onclick="window.location.href='card9-detail.html'">Buy Tickets</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+                <div class="card event-card">
+               <img src="image21.avif" alt="">
+                    <div class="card-body">
+                        <h5>MUSIC FESTIVAL</h5>
+                        <p class="event-meta">
+                            <i class="bi bi-geo-alt-fill"></i> Lahore
+                            &nbsp;
+                            <i class="bi bi-calendar-event-fill"></i> January 17, 2026
+                        </p>
+                        <p>Where art, food, and entertainment come together in one celebration.</p>
+                        <button class="btn" onclick="window.location.href='card10-detail.html'">Buy Tickets</button>                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+                <div class="card event-card">
+                    <img src="image20.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5>ADVENTURE AWAIT EVENT</h5>
+                        <p class="event-meta">
+                            <i class="bi bi-geo-alt-fill"></i> Islamabad
+                            &nbsp;
+                            <i class="bi bi-calendar-event-fill"></i> January 17, 2026
+                        </p>
+                        <p>A grand cultural celebration bringing Islamabad together in festive spirit.</p>
+                        <button class="btn" onclick="window.location.href='card11-detail.html'">Buy Tickets</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+                <div class="card event-card">
+                    <img src="image19.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5>ENJOY EVENT FESTIVAL</h5>
+                        <p class="event-meta">
+                            <i class="bi bi-geo-alt-fill"></i> karachi
+                            &nbsp;
+                            <i class="bi bi-calendar-event-fill"></i> January 17, 2026
+                        </p>
+                        <p>Karachi Festival is a vibrant celebration of music, culture, food, and community spirit.</p>
+                        <button class="btn" onclick="window.location.href='card9-detail.html'">Buy Tickets</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+                <div class="card event-card">
+               <img src="image21.avif" alt="">
+                    <div class="card-body">
+                        <h5>MUSIC FESTIVAL</h5>
+                        <p class="event-meta">
+                            <i class="bi bi-geo-alt-fill"></i> Lahore
+                            &nbsp;
+                            <i class="bi bi-calendar-event-fill"></i> January 17, 2026
+                        </p>
+                        <p>Where art, food, and entertainment come together in one celebration.</p>
+                        <button class="btn" onclick="window.location.href='card10-detail.html'">Buy Tickets</button>                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+                <div class="card event-card">
+                    <img src="image20.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5>ADVENTURE AWAIT EVENT</h5>
+                        <p class="event-meta">
+                            <i class="bi bi-geo-alt-fill"></i> Islamabad
+                            &nbsp;
+                            <i class="bi bi-calendar-event-fill"></i> January 17, 2026
+                        </p>
+                        <p>A grand cultural celebration bringing Islamabad together in festive spirit.</p>
+                        <button class="btn" onclick="window.location.href='card11-detail.html'">Buy Tickets</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <!-- card section -->
+
+
+
+
+         <!--   event cards  -->
+<h2 class="fest-heading" id="events">Explore World-Class Festivals</h2>
+<p class="fest-subtext">Explore music, culture, and celebrations near you.</p>
+<div class="fest-grid">
+               <!-- CARD 1 -->
+          <a href="card1_detail.html" class="fest-link">
+    <div class="fest-card">
+        <img src="image8.jpg" >
+        <h3>Shakespeare in the Park</h3>
+        <div class="fest-info">
+            <span><i class="fa-regular fa-calendar"></i> January 21 @ 8:00 am</span>
+            <div class="fest-row">
+                <span><i class="fa-solid fa-money-bill-1"></i> $15.00</span>
+                <span><i class="fa-solid fa-location-dot"></i> Berlin</span>
+            </div>
+        </div>
+    </div>
+    </a>
+                      <!-- CARD 1 -->
+
+                       <!-- CARD 2 -->
+          <a href="card2_detail.html" class="fest-link">
+    <div class="fest-card">
+        <img src="image9.jpg" alt="">
+        <h3>Plaza Navidena</h3>
+        <div class="fest-info">
+            <span><i class="fa-regular fa-calendar"></i> January 13 @ 8:00 am</span>
+            <div class="fest-row">
+                <span><i class="fa-solid fa-money-bill-1"></i> $9.00</span>
+                <span><i class="fa-solid fa-location-dot"></i> Sydney</span>
+            </div>
+        </div>
+    </div>
+    </a>
+                       <!-- CARD 2 -->
+ 
+                       <!-- CARD 3 -->
+        <a href="card3_detail.html" class="fest-link">
+    <div class="fest-card">
+        <img src="image10.jpg" alt="">
+        <h3>Santa Ana Fun Run Fest</h3>
+        <div class="fest-info">
+            <span><i class="fa-regular fa-calendar"></i> December 20</span>
+            <div class="fest-row">
+                <span><i class="fa-solid fa-money-bill-1"></i> Free</span>
+                <span><i class="fa-solid fa-location-dot"></i> Singapore</span>
+            </div>
+        </div>
+    </div>
+        </a>
+                               <!-- CARD 3 -->
+
+                               <!-- CARD 4 -->
+     <a href="card4_detail.html" class="fest-link">                 
+    <div class="fest-card">
+        <img src="image11.jpg" alt="">
+        <h3>Fiestas Patrias</h3>
+        <div class="fest-info">
+            <span><i class="fa-regular fa-calendar"></i> December 23</span>
+            <div class="fest-row">
+                <span><i class="fa-solid fa-money-bill-1"></i> Free</span>
+                <span><i class="fa-solid fa-location-dot"></i> Bangkok</span>
+            </div>
+        </div>
+    </div>
+    </a>
+                       <!-- CARD 4 -->
+ 
+                       <!-- CARD 5 -->
+      <a href="card5_detail.html" class="fest-link">                
+    <div class="fest-card">
+        <img src="image12.jpg" alt="">
+        <h3>The Water in the City</h3>
+        <div class="fest-info">
+            <span><i class="fa-regular fa-calendar"></i> December 21 @ 8:00 am</span>
+            <div class="fest-row">
+                <span><i class="fa-solid fa-money-bill-1"></i> $15.00</span>
+                <span><i class="fa-solid fa-location-dot"></i> Paris</span>
+            </div>
+        </div>
+    </div>
+    </a>
+                          <!-- CARD 5 -->
+
+                          <!-- CARD 6 -->
+          <a href="card6_detail.html" class="fest-link">
+    <div class="fest-card">
+        <img src="image13.jpg" alt="">
+        <h3>EGG Excellent Adventure</h3>
+        <div class="fest-info">
+            <span><i class="fa-regular fa-calendar"></i> January 13 @ 8:00 am</span>
+            <div class="fest-row">
+                <span><i class="fa-solid fa-money-bill-1"></i> $9.00</span>
+                <span><i class="fa-solid fa-location-dot"></i> London</span>
+            </div>
+        </div>
+    </div>
+    </a>
+                    <!-- CARD 6 -->
+
+                    <!-- CARD 7 -->
+        <a href="card7_detail.html" class="fest-link">
+    <div class="fest-card">
+        <img src="image14.jpg" alt="">
+        <h3>Lunar New Year Festival</h3>
+        <div class="fest-info">
+            <span><i class="fa-regular fa-calendar"></i> March 20</span>
+            <div class="fest-row">
+                <span><i class="fa-solid fa-money-bill-1"></i> Free</span>
+                <span><i class="fa-solid fa-location-dot"></i> Tokyo</span>
+            </div>
+        </div>
+    </div>
+    </a>
+                               <!-- CARD 7 -->
+
+                               <!-- CARD 8 -->
+     <a href="card8_detail.html" class="fest-link">
+    <div class="fest-card">
+        <img src="image15.jpg" alt="">
+        <h3>Summer Movies in the Park</h3>
+        <div class="fest-info">
+            <span><i class="fa-regular fa-calendar"></i> January 23</span>
+            <div class="fest-row">
+                <span><i class="fa-solid fa-money-bill-1"></i> $5.00</span>
+                <span><i class="fa-solid fa-location-dot"></i> Barcelona</span>
+            </div>
+        </div>
+    </div>
+    </a>
+
+                                     <!-- CARD 8 -->
+
+</div>
+          <!--   event cards  -->
+
+
+                 <!-- PRICING CARD -->
+        <div class="container py-5" id="ticket">
+    
+    <div class="mb-5">
+        <div class="pricing-label">[ PRICING ]</div>
+        <h2 class="section-title">
+            <span>TICKETS</span> & REGISTRATION
+        </h2>
+    </div>
+
+             <!-- PRICING CARD -->
+    <div class="row g-4">
+
+        <!-- Card 1 -->
+        <div class="col-lg-4">
+            <div class="pricing-card">
+                <h5>GENERAL ADMISSION</h5>
+                <p class="text">Affordable rates, essential features.</p>
+
+                <div class="price">$25 <span>/ PER VISIT</span></div>
+                <hr>
+
+                <ul class="pricing-list">
+                    <li>Entry to festival grounds</li>
+                    <li>Access to all stages & performances</li>
+                    <li>Food trucks and art exhibits</li>
+                    <li>Enjoy the show from our comfortable standard seating</li>
+                </ul>
+
+          <button class="btn" onclick="window.location.href='card12-details.html'">GET TICKET</button>
+
+            </div>
+        </div>
+
+        <!-- Card 2 (VIP) -->
+        <div class="col-lg-4">
+            <div class="pricing-card featured">
+                <h5>VIP PASS</h5>
+                <p class="text">Affordable rates, essential features.</p>
+
+                <div class="price">$80 <span>/ WEEKEND</span></div>
+                <hr>
+
+                <ul class="pricing-list">
+                    <li>All General Admission perks</li>
+                    <li>Exclusive VIP viewing area</li>
+                    <li>Fast-track entry</li>
+                    <li>VIP lounge with complimentary drinks</li>
+                </ul>
+
+                        <button class="btn" onclick="window.location.href='card12-details.html'">GET TICKET</button>
+
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-lg-4">
+            <div class="pricing-card">
+                <h5>FAMILY PACK</h5>
+                <p class="text">Affordable rates, essential features.</p>
+
+                <div class="price">$60 <span>/ PER VISIT</span></div>
+                <hr>
+                
+                <ul class="pricing-list">
+                    <li>Entry for 2 adults + 2 kids</li>
+                    <li>Access to kid-friendly zones</li>
+                    <li>Reserved family picnic area</li>
+                    <li>Dedicated VIP viewing area designed for families</li>
+                  </ul>
+                  
+                  <button class="btn" onclick="window.location.href='card12-details.html'">GET TICKET</button>
+                  
+                </div>
+              </div>
+              
+            </div>
+          </div>
+             <!-- PRICING CARD -->
+          
+          <!--  SERVICES SECTION  -->
+<section class="services" id="Services">
+  <h2>OUR <span>SERVICES</span></h2>
+  
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="icon">
+        <i class="fa-solid fa-location-dot"></i>
+      </div>
+      <h3>Venue Selection</h3>
+      <p>Venue selection is choosing a suitable location based on event needs and budget.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">
+        <i class="fa-solid fa-envelope"></i>
+      </div>
+      <h3>Invitation Card</h3>
+      <p>Invitation card is a formal or informal request inviting guests to an event.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">
+        <i class="fa-solid fa-music"></i>
+      </div>
+      <h3>Entertainment</h3>
+      <p>Activities or performances arranged to engage and amuse event guests.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">
+        <i class="fa-solid fa-utensils"></i>
+      </div>
+      <h3>Food And Drinks</h3>
+      <p>Meals and beverages provided to guests during an event.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">
+        <i class="fa-solid fa-camera"></i>
+      </div>
+      <h3>Photos And Videos</h3>
+      <p>Photos and videos capture special moments and memories of an event.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">
+        <i class="fa-solid fa-cake-candles"></i>
+      </div>
+      <h3>Custom Foods</h3>
+      <p>Custom foods are specially prepared dishes tailored to guests’ preferences or event theme.</p>
+    </div>
+
+  </div>
+</section>
+           <!--  SERVICES SECTION  -->
+
+
+                <!--  REVIEW SECTION-->
+                <section class="testimonial-section" id="Reviews">
+                  
+    <div class="header">
+        <div>
+            <div class="small-title">FESTIVAL STORIES</div>
+            <div class="main-title">
+                Loved by Thousands of<br>Music & Festival Fans
+            </div>
+        </div>
+
+        <!-- Right Top Arrows -->
+        <div class="nav-arrows">
+            <div class="custom-prev"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="custom-next"><i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+    </div>
+
+    <div class="swiper testimonialSwiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        “Amazing energy and perfect sound quality. The performances were outstanding and the whole festival atmosphere was unforgettable.”
+                    </p>
+                    <div class="stars">★★★★★</div>
+                    <div class="user">
+                        <img src="image17.jpeg">
+                        <div>
+                            <h4>Oliver Brown</h4>
+                            <span class="verified">✔ Verified Festify Attendee</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                  “Great organization and smooth entry experience. The live music, lights, and crowd vibes made the event truly enjoyable.” 
+                     </p>
+                    <div class="stars">★★★★★</div>
+                    <div class="user">
+                        <img src="image16.jpeg">
+                        <div>
+                            <h4>Sophia Martinez</h4>
+                            <span class="verified">✔ Verified Festify Attendee</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                 “Incredible singers and an electrifying stage setup. Every moment felt exciting and well-planned from start to finish.”  
+                    </p>
+                    <div class="stars">★★★★★</div>
+                    <div class="user">
+                        <img src="image18.jpeg">
+                        <div>
+                            <h4>Emma Richardson</h4>
+                            <span class="verified">✔ Verified Festify Attendee</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        “Amazing energy and perfect sound quality. The performances were outstanding and the whole festival atmosphere was unforgettable.”
+                    </p>
+                    <div class="stars">★★★★★</div>
+                    <div class="user">
+                        <img src="image17.jpeg">
+                        <div>
+                            <h4>Oliver Brown</h4>
+                            <span class="verified">✔ Verified Festify Attendee</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                  “Great organization and smooth entry experience. The live music, lights, and crowd vibes made the event truly enjoyable.” 
+                     </p>
+                    <div class="stars">★★★★★</div>
+                    <div class="user">
+                        <img src="image16.jpeg">
+                        <div>
+                            <h4>Sophia Martinez</h4>
+                            <span class="verified">✔ Verified Festify Attendee</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                 “Incredible singers and an electrifying stage setup. Every moment felt exciting and well-planned from start to finish.”  
+                    </p>
+                    <div class="stars">★★★★★</div>
+                    <div class="user">
+                        <img src="image18.jpeg">
+                        <div>
+                            <h4>Emma Richardson</h4>
+                            <span class="verified">✔ Verified Festify Attendee</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+                 <!--  REVIEWS SECTION  -->
+
+
+            <!--  GALLERY SECTION  -->
+<section class="gallery-section" id="gallery">
+  <h2>Our Gallery</h2>
+
+  <div class="gallery-grid">
+    <img src="image23.jpg" alt="">
+    <img src="image24.jpg" alt="">
+    <img src="image25.jpg" alt="">
+    <img src="image26.jpg" alt="">
+    <img src="image12.jpg" alt="">
+    <img src="image29.webp" alt="">
+    <img src="image27.jpg" alt="">
+    <img src="image28.jpg" alt="">
+  </div>
+</section>
+            <!--  GALLERY SECTION  -->
+
+            
+         <!-- FAQ SECTION-->
+<section class="faq-section" id="FAQ">
+
+<!-- LEFT -->
+<div class="faq-left">
+
+  <div class="faq-small-title">FREQUENTLY ASKED QUESTIONS</div>
+  <div class="faq-title">You've Got Any Questions?</div>
+
+  <!-- ITEM 1 -->
+<!-- FAQ ITEM 1 -->
+<div class="faq-item">
+  <input type="radio" name="faq" id="faq1" checked>
+  <label class="faq-question" for="faq1">
+    What is this festival all about?
+    <span class="faq-icon">
+      <i class="fa-solid fa-plus"></i>
+      <i class="fa-solid fa-minus"></i>
+    </span>
+  </label>
+  <div class="faq-answer">
+Our festival is a celebration of music, singing, culture, and joy. It brings people together to enjoy live performances, entertainment, food, and unforgettable experiences.  </div>
+</div>
+
+<!-- FAQ ITEM 2 -->
+<div class="faq-item">
+  <input type="radio" name="faq" id="faq2">
+  <label class="faq-question" for="faq2">
+What type of music will be featured at the festival?   
+ <span class="faq-icon">
+      <i class="fa-solid fa-plus"></i>
+      <i class="fa-solid fa-minus"></i>
+    </span>
+  </label>
+  <div class="faq-answer">
+The festival includes a mix of genres such as pop, rock, folk, EDM, classical, and local music, featuring both well-known artists and emerging talent.
+  </div>
+</div>
+
+<!-- FAQ ITEM 3 -->
+<div class="faq-item">
+  <input type="radio" name="faq" id="faq3">
+  <label class="faq-question" for="faq3">
+    Who can attend the festival?
+    <span class="faq-icon">
+      <i class="fa-solid fa-plus"></i>
+      <i class="fa-solid fa-minus"></i>
+    </span>
+  </label>
+  <div class="faq-answer">
+The festival is open to all ages unless otherwise stated. Some zones or events may be age-restricted, but overall it’s designed for families, friends, and music lovers.  </div>
+</div>
+
+<!-- FAQ ITEM 4 -->
+<div class="faq-item">
+  <input type="radio" name="faq" id="faq4">
+  <label class="faq-question" for="faq4">
+    Do I need to buy tickets in advance?
+    <span class="faq-icon">
+      <i class="fa-solid fa-plus"></i>
+      <i class="fa-solid fa-minus"></i>
+    </span>
+  </label>
+  <div class="faq-answer">
+    Yes, we recommend purchasing tickets in advance to secure your spot and avoid last-minute hassle. Limited tickets may be available at the gate depending on capacity.
+  </div>
+</div>
+
+
+
+<!-- FAQ ITEM 5 -->
+<div class="faq-item">
+  <input type="radio" name="faq" id="faq5">
+  <label class="faq-question" for="faq5">
+Are there live singing and performances?   
+ <span class="faq-icon">
+      <i class="fa-solid fa-plus"></i>
+      <i class="fa-solid fa-minus"></i>
+    </span>
+  </label>
+  <div class="faq-answer">
+Absolutely! Enjoy live singing, band performances, DJ sets, and special stage shows throughout the festival.
+  </div>
+</div>
+
+
+<!-- FAQ ITEM 6 -->
+<div class="faq-item">
+  <input type="radio" name="faq" id="faq6">
+  <label class="faq-question" for="faq6">
+What should I bring with me?   
+ <span class="faq-icon">
+      <i class="fa-solid fa-plus"></i>
+      <i class="fa-solid fa-minus"></i>
+    </span>
+  </label>
+  <div class="faq-answer">
+Bring your ticket (digital or printed), valid ID, comfortable clothing, and a positive vibe! Avoid bringing restricted items listed in our event guidelines.
+  </div>
+</div>
+
+
+
+</div>
+<!-- RIGHT -->
+<div class="faq-right">
+  <img src="image2.webp" class="faq-image">
+
+  <div class="faq-box">
+    <div>
+      <h4>Still Have Questions?</h4>
+      <p>Feel free to ask any questions!</p>
+    </div>
+<button class="btn button" style="width: 8.5em; height: 2.3em;" onclick="scrollToContact()">
+  HERE TO HELP
+</button>
+</div>
+</div>
+
+</section>
+         <!-- FAQ SECTION-->
+
+
+         <!-- CONTACT FORM -->
+<section class="contact-area" id="contact">
+    <div class="contact-box">
+
+        <p class="contact-subtitle">Find us</p>
+        <h2 class="contact-heading">Contact Us</h2>
+
+        <div class="contact-layout">
+
+            <!-- Left Details -->
+            <div class="contact-details">
+
+                <div class="detail-row">
+                    <i class="fa-solid fa-phone detail-icon"></i>
+                    <div>
+                        <h4 class="detail-title">Call Us</h4>
+                        <p class="detail-text">+92 321 9009251</p>
+                    </div>
+                </div>
+
+                <div class="detail-row">
+                    <i class="fa-solid fa-envelope detail-icon"></i>
+                    <div>
+                        <h4 class="detail-title">Email Us</h4>
+                        <p class="detail-text">festify.2010@mail.com</p>
+                    </div>
+                </div>
+
+                <div class="detail-row">
+                    <i class="fa-solid fa-location-dot detail-icon"></i>
+                    <div>
+                        <h4 class="detail-title">Address</h4>
+                        <p class="detail-text">
+                            Aptech Gulshan campus 2 karachi
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Form -->
+            <form class="message-form" id="contactForm">
+
+                <!-- Success Message -->
+                <div class="success-alert" id="successMsg">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Your message has been sent successfully!
+                </div>
+
+                <div class="form-row">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                </div>
+
+                <input type="text" placeholder="Subject" required>
+                <textarea placeholder="Message" required></textarea>
+
+                <btn type="submit" class="send-btn">Send Message</btn>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+         <!-- CONTACT FORM -->
+
+
+         <!--   FOOTER  -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-box">
+      <div class="footer-logo">FESTIFY</div>
+      <p>
+        Festify is your ultimate destination for music festivals, live concerts,
+        cultural events, and unforgettable experiences around the world.
+      </p>
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Festify</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- TOP EVENTS -->
+    <div class="footer-box">
+      <h3>Top Events</h3>
+      <ul>
+        <li><a href="#">Music Festivals</a></li>
+        <li><a href="#">Live Concerts</a></li>
+        <li><a href="#">Cultural Shows</a></li>
+        <li><a href="#">DJ Nights</a></li>
+        <li><a href="#">Street Festivals</a></li>
+      </ul>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div class="footer-box">
+      <h3>Newsletter</h3>
+      <p>Subscribe for festival updates & exclusive offers.</p>
+
+      <form class="newsletter">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 <span>Festify</span>. All Rights Reserved.
+  </div>
+  <!-- Scroll to Top Button -->
+<div id="scrollTop" style="
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #ff2e63;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    font-size: 22px;
+    z-index: 9999;
+    display: none; /* hidden initially */
+    transition: 0.3s;
+">
+  <i class="fas fa-arrow-up"></i>
+</div>
+
+</footer>
+         <!-- FOOTER  -->
+
+         
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- JS LINK -->
+<script src="script.js"></script>
+
+<!-- Mobile Nav JS -->
+<script>
+function toggleMobileNav() {
+  const nav = document.getElementById('mobileNav');
+  const hamburger = document.getElementById('hamburger');
+  nav.classList.toggle('open');
+  hamburger.classList.toggle('active');
+  document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+}
+function closeMobileNav() {
+  const nav = document.getElementById('mobileNav');
+  const hamburger = document.getElementById('hamburger');
+  nav.classList.remove('open');
+  hamburger.classList.remove('active');
+  document.body.style.overflow = '';
+}
+</script>
+</body>
+</html>
